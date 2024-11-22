@@ -52,7 +52,7 @@ class Postgres:
             with self.connection.cursor() as cursor:
                 # Create the table if it does not exist
                 cursor.execute("""
-                CREATE TABLE IF NOT EXISTS cpv_database_clients_Agosto (
+                CREATE TABLE IF NOT EXISTS cpv_database_clients(
                     "ID" SERIAL PRIMARY KEY,
                     "EMPRESA" VARCHAR(100),
                     "CIDADE" VARCHAR(60),
@@ -75,7 +75,7 @@ class Postgres:
 
                 # Insert data from JSON
                 query_sql = """
-                    INSERT INTO cpv_database_clients_Agosto(
+                    INSERT INTO cpv_database_clients(
                         "EMPRESA", "CIDADE", "ESTADO", "SITUACAO_DA_CONTA", 
                         "DATA_DE_INICIO_DO_CONTRATO", "DATA_FINAL_DO_CONTRATO", 
                         "CONTRATO_EM_MESES", "DIAS_EM_CONTRATO", 
